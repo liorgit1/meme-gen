@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><meme-gen></meme-gen></title>
+    <title>meme-gen</title>
+    <link rel="stylesheet" href="css/main.css">
+
 </head>
-<body>
-    
+
+<body onload="init()">
+    <header class="main-header">
+        <div class="header-content flex space-between align-center">
+            <div href="#" class="logo">Meme</div>
+            <nav class="main-nav flex">
+                <a href="#">Gallery</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+
+        <div class="app-container wrap flex space-around ">
+
+            <div class="canvas-container">
+                <canvas id="canvas" class="canvas"></canvas>
+            </div>
+
+            <div class="control-panel flex column">
+                <div class="text-box flex">
+                    <input onkeyup="setMemeText()" title="Line Text Input" type="text" name="text" id="text"
+                        placeholder="some text">
+                </div>
+                <div class="btns-container">
+                    <button onclick="onChangeFontSize('+')">+</button>
+                    <button onclick="onChangeFontSize('-')">-</button>
+                    <button onclick="onChangeTextPos('up')">up</button>
+                    <button onclick="onChangeTextPos('down')">down</button>
+                    <button onclick="onChangeTextPos('left')">left</button>
+                    <button onclick="onChangeTextPos('right')">right</button>
+                    <button onclick="onAddNewLine()">add new line</button>
+                </div>
+
+                <div class="edit-btns-container flex center wrap">
+
+                    <button onclick="onSwichLine()">swich line</button>
+                    <button onclick="onRemoveLine()">remove line</button>
+                    <button onclick="onAling('left')">aling left</button>
+                    <button onclick="onAling('right')">aling right</button>
+                    <button onclick="onAling('center')">aling center</button>
+                    <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+
+                    <button form="userPrefs">
+                        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
+                    </button>
+                </div>
+
+
+                <div class="social-btns-container flex center ">
+
+                    <button>a</button>
+                    <button>a</button>
+                    <button>a</button>
+                    <button>a</button>
+                    <button>a</button>
+
+                </div>
+
+
+                .
+
+
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </main>
+
+    <div class="grid-container" id="#gallery"></div>
+
+
+
+    <script src="js/controller.JS"></script>
+    <script src="js/util.JS"></script>
+    <script src="js/data-model.JS"></script>
+    <script src="js/service.JS"></script>
+    <script src="js/upload-download.js"></script>
 </body>
+
 </html>

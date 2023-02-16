@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.app-container {
+    margin: auto;
+    height: 90vh;
+    width: 90vw;
+    background-color: black;
+
+
+}
+
+.canvas-container {
+    border-radius: 30px;
+    height: 400px;
+    width: 400px;
+    background-color: rgb(208, 17, 17);
+}
+
+
+.main-header {
+    height: 6vh;
+    width: 90vw;
+    padding: auto auto;
+    margin-inline: auto;
+    border-radius: 50px;
+    background-color: #8faf1b;
+    background-image: linear-gradient(-86deg, #be8933 0%, #df7427 100%);
+    box-shadow: inset 0 -6px 0 #1e1e1e;
+}
+
+.main-header .header-content {
+    height: inherit
+}
+
+.social-btns-container{
+    padding-top: 20px;
+
+
+
+}
+
+.app-container {
+    padding-top: 20px;
+
+
+}
+
+.center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.space-around {
+    justify-content: space-around;
+}
+
+.column {
+    flex-direction: column;
+}
+
+
+.grid-container {
+    margin: auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    margin-bottom: 1rem;
+}
+.grid-container a {
+    margin: auto;
+}
+.grid-container img {
+
+height: 100px;
+width: 100px;
+border-radius: 5px;
+justify-self: center;
+margin: auto;
+}
+
+
+
+.control-panel {
+    height: 400px;
+    width: 400px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 1px 2px 26px 1px #ffffff5d;
+    background-color: #68686879;
+    order: 1;
+    align-items: center;
+}
+
+.text-box {
+    padding: 0.2rem 0.8rem;
+    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    border-radius: 28px;
+    background-color: #ebeef3;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+
+.edit-btns-container {
+
+    width: 90%;
+    padding: 1rem 1rem 0;
+    height: block;
+    border-radius: 15px;
+    background-color: #db823ebd;
+    margin-block-start: 1rem;
+    margin-block-end: auto;
+}
