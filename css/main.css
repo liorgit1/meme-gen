@@ -48,6 +48,9 @@
 
 }
 
+.btns-container{
+    display: flex;
+}
 .app-container {
     padding-top: 20px;
 
@@ -151,4 +154,24 @@ button{
 }
 body{
     background-color: black;
+}
+
+
+.btn{
+height: 2rem;
+width:  2rem;
+justify-content: center;
+align-content: center;
+text-align: center;
+justify-items: center;
+border: #1e1e1e 1px solid;
+padding-top: 6px;
+
+background-color: whitesmoke;
+}
+
+.file-input.btn{
+width: 80px;
+
+
 }
