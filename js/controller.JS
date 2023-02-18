@@ -86,7 +86,6 @@ function drawText() {
 }
 
 function onShowGallery() {
-
     showGallery()
 }
 
@@ -140,7 +139,6 @@ function onChangeColor(color) {
 
 function onChangeFilColor(color) {
     changeFilColor(color)
-
 }
 
 
@@ -149,25 +147,6 @@ function onSearchImg() {
 }
 
 function onChangeFont(font) {
-
     changeFont(font)
-
-
-
 }
 
-function changeFont(font) {
-    gMeme.lines[gMeme.selectedLineIdx].font = font
-    renderCanvas()
-    drawText()
-
-}
-
-function showGallery() {
-    document.querySelector('.grid-container').classList.remove('hide')
-    document.querySelector('.app-container').classList.add('hide')
-    document.querySelector('#search').value=''
-    renderGallery()
-
-
-}
