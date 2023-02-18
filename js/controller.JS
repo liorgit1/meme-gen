@@ -166,6 +166,7 @@ function changeFont(font) {
 function showGallery() {
     document.querySelector('.grid-container').classList.remove('hide')
     document.querySelector('.app-container').classList.add('hide')
+    document.querySelector('#search').value=''
 
 
 
