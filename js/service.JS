@@ -40,10 +40,18 @@ function getImgUrl() {
 }
 
 
-function onUpdateMeme(imgNum) {
-    updateMeme(imgNum)
-}
 
+function updateMeme(imgNum) {
+    document.querySelector('.app-container').classList.remove('hide')
+    document.querySelector('.grid-container').classList.add('hide')
+    var currMeme;
+    currMeme = gImgs.filter(function (img) {
+        return (img.id === imgNum);
+    })
+    gMeme.selectedImgId = currMeme[0].id;
+    gMyURL = ''
+    renderCanvas()
+}
 
 function getMeme() {
     return gMeme;
@@ -71,23 +79,23 @@ function changeTextPos(pos) {
     else if (pos === 'right') gMeme.lines[gMeme.selectedLineIdx].pos.x += 10
 }
 
-function aling(pos){
+function aling(pos) {
     console.log('aling :>> ', pos);
     if (pos === 'left') gMeme.lines[gMeme.selectedLineIdx].pos.x = 60
     if (pos === 'center') gMeme.lines[gMeme.selectedLineIdx].pos.x = 200
     if (pos === 'right') gMeme.lines[gMeme.selectedLineIdx].pos.x = 300
 
 
-renderCanvas()
+    renderCanvas()
 
 }
 
 function addLine() {
     if (gLineNum === 1) {
-        newLine = { txt: 'new', size: 45, align: 'left', color: 'red', pos: { x: 250, y: 250 } }
+        newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 250 } }
         gLineNum++
     } else if (gLineNum === 2) {
-        newLine = { txt: 'new', size: 45, align: 'left', color: 'red', pos: { x: 250, y: 300 } }
+        newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 300 } }
         gLineNum++
     } else if (gLineNum === 3) {
         return
@@ -107,6 +115,32 @@ function switchLine() {
 function removeLine() {
     gMeme.lines.splice(gMeme.selectedLineIdx, gMeme.selectedLineIdx + 1);
     if (gMeme.selectedLineIdx !== 0) gMeme.selectedLineIdx--
-gLineNum--
+    gLineNum--
     renderCanvas()
+}
+
+function changeFilColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].fillColor = color
+    drawText()
+}
+
+
+function changeColor(color) {
+    gMeme.lines[gMeme.selectedLineIdx].color = color
+    drawText()
+}
+function getImgsForDisplay() {
+    var imgs = [];
+    imgs = filterImgs(gImgs)
+    return imgs;
+}
+
+function filterImgs(imgs) {
+    var userSearch = document.getElementById('search').value;
+    if (userSearch === '') return imgs;
+    else return imgs.filter(function (img) {
+        return img.keywords.some(function (keyword) {
+            return keyword.substring(0, userSearch.length) === userSearch;
+        });
+    });
 }

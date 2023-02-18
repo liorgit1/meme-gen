@@ -1,7 +1,7 @@
 'use strict'
 var gElCanvas;
 var gCtx
-const fileInput = document.getElementById('file-input');
+// const fileInput = document.getElementById('file-input');
 
 function init() {
     gElCanvas = document.getElementById('canvas');
@@ -10,19 +10,31 @@ function init() {
     renderGallery()
 }
 
+// function renderImg(img) {
+//     var imgStartX = 0;
+//     var imgStartY = 0;
+//     gElCanvas.width = img.width;
+//     gElCanvas.height = img.height;
+//     gCtx.drawImage(img, imgStartX, imgStartY, img.width, img.height);
+// }
 
-
-function resizeCanvas() {
+function resizeCanvas(img = gMyURL) {
     var elContainer = document.querySelector('.canvas-container');
-    let height = elContainer.offsetHeight
-    let width = elContainer.offsetWidth
+    if (img) {
+        elContainer.style.height = img.height;
+        elContainer.style.width = img.width;
+    } else {
 
-    gElCanvas.height = height;
-    gElCanvas.width = width;
+        let height = elContainer.offsetHeight
+        let width = elContainer.offsetWidth
+
+        gElCanvas.height = height;
+        gElCanvas.width = width;
+    }
 }
 
 function renderGallery() {
-    let images = getAllImages()
+    let images = getImgsForDisplay()// getAllImages()
     console.log('images :>> ', images);
     let strHtml = images.map(function (img) {
         return `
@@ -50,15 +62,10 @@ function renderCanvas(imgStartX = 0, imgStartY = 0, imgUrl = getImgUrl() || gMyU
 }
 
 
-
-function updateMeme(imgNum) {
-    var currMeme;
-    currMeme = gImgs.filter(function (img) {
-        return (img.id === imgNum);
-    })
-    gMeme.selectedImgId = currMeme[0].id;
-    renderCanvas()
+function onUpdateMeme(imgNum) {
+    updateMeme(imgNum)
 }
+
 
 function drawText() {
     const currMeme = getMeme()
@@ -68,16 +75,20 @@ function drawText() {
     currMeme.lines.forEach(function (line) {
 
         gCtx.lineWidth = '2';
-        gCtx.fillStyle = 'white';
+        gCtx.fillStyle = line.fillColor
+        gCtx.strokeStyle = line.color
         gCtx.textAlign = 'center';
-        gCtx.font = `${line.size}px Impact`;
-        gCtx.fillText(line.txt, line.pos.x, line.pos.y);
-        gCtx.strokeText(line.txt, line.pos.x, line.pos.y); //img,x,y,xend,yend
+        gCtx.font = `${line.size}px ${line.font}`;
+        gCtx.fillText(line.txt, line.pos.x, line.pos.y)
+        gCtx.strokeText(line.txt, line.pos.x, line.pos.y) //img,x,y,xend,yend
     })
 
 }
 
+function onShowGallery() {
 
+    showGallery()
+}
 
 
 function setMemeText() {
@@ -119,12 +130,43 @@ function onRemoveLine() {
 
 function onAling(pos) {
     aling(pos)
+}
 
 
+
+function onChangeColor(color) {
+    changeColor(color)
+}
+
+function onChangeFilColor(color) {
+    changeFilColor(color)
+
+}
+
+
+function onSearchImg() {
+    renderGallery();
+}
+
+function onChangeFont(font) {
+
+    changeFont(font)
 
 
 
 }
 
+function changeFont(font) {
+    gMeme.lines[gMeme.selectedLineIdx].font = font
+    renderCanvas()
+    drawText()
+
+}
+
+function showGallery() {
+    document.querySelector('.grid-container').classList.remove('hide')
+    document.querySelector('.app-container').classList.add('hide')
 
 
+
+}

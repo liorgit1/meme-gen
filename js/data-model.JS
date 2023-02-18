@@ -2,11 +2,11 @@ var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 var gLineNum = 1
 var gImgs = [
     { id: 1, url: 'imgs/1.jpg', keywords: ['funny', 'tramp'] },
-    { id: 2, url: './imgs/2.jpg', keywords: ['puppy', 'happy'] },
-    { id: 3, url: './imgs/3.jpg', keywords: ['happy'] },
-    { id: 4, url: './imgs/4.jpg', keywords: ['happy'] },
-    { id: 5, url: './imgs/5.jpg', keywords: ['happy'] },
-    { id: 6, url: './imgs/6.jpg', keywords: ['happy'] },
+    { id: 2, url: './imgs/2.jpg', keywords: ['puppy', 'happy','pet'] },
+    { id: 3, url: './imgs/3.jpg', keywords: ['happy','pet'] },
+    { id: 4, url: './imgs/4.jpg', keywords: ['happy','cat'] },
+    { id: 5, url: './imgs/5.jpg', keywords: ['happy','kid','success'] },
+    { id: 6, url: './imgs/6.jpg', keywords: ['happy','theory'] },
     { id: 7, url: './imgs/7.jpg', keywords: ['happy'] },
     { id: 8, url: './imgs/8.jpg', keywords: ['happy'] },
     { id: 9, url: './imgs/9.jpg', keywords: ['happy'] },
@@ -33,7 +33,9 @@ var gMeme = {
         {
             txt: 'I sometimes eat Falafel',
             size: 20,
-            color: 'red',
+            color: document.querySelector('.color').value,
+            fillColor: document.querySelector('.fillColor').value,
+            font:'Impact',
             pos: { x: 200, y: 65 },
         }
     ]

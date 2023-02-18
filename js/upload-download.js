@@ -10,6 +10,39 @@ function onImgInput(ev) {
     loadImageFromInput(ev, renderImg)
 }
 
+
+
+
+
+function resizeCanvasToFitImage(img) {
+    const canvas = gElCanvas;
+    const canvasWidth = canvas.width;
+    const canvasHeight = canvas.height;
+    const imgWidth = img.width;
+    const imgHeight = img.height;
+    let scaleFactor = Math.min(canvasWidth / imgWidth, canvasHeight / imgHeight);
+    canvas.width = imgWidth * scaleFactor;
+    canvas.height = imgHeight * scaleFactor;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // CallBack func will run on success load of the img
 function loadImageFromInput(ev, onImageReady) {
     const reader = new FileReader()
@@ -18,14 +51,20 @@ function loadImageFromInput(ev, onImageReady) {
         let img = new Image() // Create a new html img element
         img.src = event.target.result // Set the img src to the img file we read
         // Run the callBack func, To render the img on the canvas
-        img.onload = onImageReady.bind(null, img)
+
+        // img.onload = onImageReady.bind(null, img)
         // Can also do it this way:
-        // img.onload = () => onImageReady(img)
+        img.onload = () => {
+            // resizeCanvasToFitImage(img)
+            onImageReady(img)
+        }
     }
     reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
     gMyURL = URL.createObjectURL(ev.target.files[0])
-    
+
 }
+
+
 
 function renderImg(img) {
     // Draw the img on the canvas
