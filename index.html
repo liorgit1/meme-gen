@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>meme-gen</title>
+    <title>Meme-generator</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/4b302c6aa0.js" crossorigin="anonymous"></script>
 </head>
@@ -13,7 +13,7 @@
 <body onload="init()">
     <header class="main-header">
         <div class="header-content flex space-between align-center">
-            <div href="#" class="logo">Meme-generator</div>
+            <div href="#" class="logo">Meme-gen</div>
 
             <div class="search">
                 <input list="search-datalist" name="search-datalist" id="search" type="txt" class="search-words"
@@ -58,13 +58,13 @@
 
                 <!-- <div class="edit-btns-container flex center wrap"> -->
                 <div class="editor center wrap">
-                    <div class="btn" onclick="onChangeFontSize('+')" title="bigger"><i class="fa-solid fa-plus"></i></div>
-                    <div class="btn" onclick="onChangeFontSize('-')" title="smaller"><i class="fa-solid fa-minus"></i></div>
-                    <div class="btn" onclick="onAddNewLine()" title="add new line"><i class="fa-regular fa-square-plus"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('up')" title="move up"><i class="fa-solid fa-up-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('down')"title="move down"><i class="fa-solid fa-down-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('left')"title="move left"><i class="fa-solid fa-left-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('right')"title="move right"><i class="fa-solid fa-right-long"></i></div>
+                    <div class="btn" onclick="onChangeFontSize('+')" title="Bigger"><i class="fa-solid fa-plus"></i></div>
+                    <div class="btn" onclick="onChangeFontSize('-')" title="Smaller"><i class="fa-solid fa-minus"></i></div>
+                    <div class="btn" onclick="onAddNewLine()" title="Add new line"><i class="fa-regular fa-square-plus"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('up')" title="Move up"><i class="fa-solid fa-up-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('down')"title="Move down"><i class="fa-solid fa-down-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('left')"title="Move left"><i class="fa-solid fa-left-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('right')"title="Move right"><i class="fa-solid fa-right-long"></i></div>
 
 
 
@@ -72,15 +72,15 @@
 
 
 
-                    <div class="btn" onclick="onSwichLine()"title="switch line"><i class="fa-solid fa-shuffle"></i></div>
-                    <div class="btn" onclick="onRemoveLine()"title="remove line"><i class="fa-solid fa-eraser"></i></div>
-                    <div class="btn" onclick="onAling('left')"title="aling left"><i class="fa-solid fa-align-left"></i></div>
-                    <div class="btn" onclick="onAling('center')"title="aling center"><i class="fa-solid fa-align-center"></i></div>
-                    <div class="btn" onclick="onAling('right')"title="aling right"><i class="fa-solid fa-align-right"></i></div>
-                    <input type="color" value="#000000" class="color" onchange="onChangeColor(this.value)"title="outline color" />
-                    <input type="color" value="#ff0000" class="fillColor" onchange="onChangeFilColor(this.value)"title="fill color" />
+                    <div class="btn" onclick="onSwichLine()"title="Switch line"><i class="fa-solid fa-shuffle"></i></div>
+                    <div class="btn" onclick="onRemoveLine()"title="Remove line"><i class="fa-solid fa-eraser"></i></div>
+                    <div class="btn" onclick="onAling('left')"title="Aling left"><i class="fa-solid fa-align-left"></i></div>
+                    <div class="btn" onclick="onAling('center')"title="Aling center"><i class="fa-solid fa-align-center"></i></div>
+                    <div class="btn" onclick="onAling('right')"title="Aling right"><i class="fa-solid fa-align-right"></i></div>
+                    <input type="color" value="#000000" class="color" onchange="onChangeColor(this.value)"title="Outline color" />
+                    <input type="color" value="#ff0000" class="fillColor" onchange="onChangeFilColor(this.value)"title="Fill color" />
 
-                    <div class="inputfile-box btn"title="upload from your computer">
+                    <div class="inputfile-box btn"title="Upload from your computer">
 
                         <input type="file" id="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
                         <label for="file">
@@ -91,19 +91,19 @@
                         </label>
                     </div>
 
-                    <select class="font" onchange="onChangeFont(this.value)" id="font-datalist">
+                    <select class="font" onchange="onChangeFont(this.value)" id="font-datalist" title="Font">
                         <option value="Impact">Impact</option>
                         <option value="Arial">Arial</option>
                         <option value=" Comic Sans MS">Comic Sans</option>
                         <option value="Helvetica">Helvetica</option>
                     </select>
 
-                    <button class="btn" onclick="onUploadImg()"title="upload to facebook">
+                    <button class="btn" onclick="onUploadImg()"title="Upload to facebook">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
 
                     <button class="downloadBtn btn">
-                        <a href="#" onclick="downloadImg(this)" download="my-img.jpg"title="download"><i
+                        <a href="#" onclick="downloadImg(this)" download="my-img.jpg"title="Download"><i
                                 class="fa-solid fa-download"></i></a>
                     </button>
                 </div>
