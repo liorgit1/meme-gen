@@ -10,9 +10,6 @@
     width: 90vw;
     background-color: black;
     border-radius: 80px;
-
-
-
 }
 
 .canvas-container {
@@ -34,12 +31,8 @@ a {
 }
 
 .logo {
-
     margin-inline-start: 3rem;
     font-size: 2rem;
-
-
-
 }
 
 .main-header {
@@ -64,8 +57,6 @@ a {
 .social-btns-container {
     padding-top: 20px;
 
-
-
 }
 
 .btns-container {
@@ -74,8 +65,6 @@ a {
 
 .app-container {
     padding-top: 20px;
-
-
 }
 
 .center {
@@ -204,13 +193,10 @@ input[type="color"i] {
 
 .file-input.btn {
     width: 80px;
-
 }
 
 .file-input {
     height: fit-content;
-
-
 }
 
 .file-input {
@@ -222,13 +208,7 @@ input[type="color"i] {
 }
 
 .font {
-
     height: fit-content;
-
-
-
-
-
 }
 
 
@@ -253,30 +233,11 @@ input[type="text"i] {
     justify-content: center;
     align-items: center;
 
-
-
 }
-
-
-
-
-
-
 
 input::placeholder {
     color: black;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 737px) {
 
@@ -288,16 +249,28 @@ input::placeholder {
         margin-inline: 60px;
     }
 
-
-
-
-
     .grid-container img {
-
         height: 200px;
         width: 200px;
     }
+}
+.up{
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
 
+.left{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    
+}
+.right{
+    grid-column: 3/4;
+    grid-row: 2/3;
 
+}
+.down{
+    grid-column: 2/3;
+    grid-row: 3/4;
 
 }

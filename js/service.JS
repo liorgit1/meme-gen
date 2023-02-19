@@ -27,14 +27,7 @@ function getImageById(id) {
             return gImgs[i];
         }
     }
-    return null; // if no image is found with the given id
-}
-
-// var selectedImageId = 3;
-// var selectedImage = getImageById(selectedImageId);
-// console.log(selectedImage.url); // outputs the URL of the selected image
-// console.log(selectedImage); // outputs the URL of the selected image
-
+    return null; }
 function getImgUrl() {
     return `imgs/${gMeme.selectedImgId}.jpg`
 }
@@ -46,7 +39,7 @@ function updateMeme(imgNum) {
     document.querySelector('.grid-container').classList.add('hide')
     document.querySelector('.galleryLnk').classList.remove('hide')
     document.querySelector('#search').classList.add('hide')
-    document.querySelector('#search').value=''
+    document.querySelector('#search').value = ''
     var currMeme
     currMeme = gImgs.filter(function (img) {
         return (img.id === imgNum);
@@ -76,11 +69,12 @@ function changeFontSize(size) {
 }
 
 function changeTextPos(pos) {
-    if (pos === 'down') gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
-    else if (pos === 'up') gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
-    else if (pos === 'left') gMeme.lines[gMeme.selectedLineIdx].pos.x -= 10
-    else if (pos === 'right') gMeme.lines[gMeme.selectedLineIdx].pos.x += 10
+    if (pos === 'down' && gMeme.lines[gMeme.selectedLineIdx].pos.y < 380) gMeme.lines[gMeme.selectedLineIdx].pos.y += 10
+    else if (pos === 'up' && gMeme.lines[gMeme.selectedLineIdx].pos.y > 20) gMeme.lines[gMeme.selectedLineIdx].pos.y -= 10
+    else if (pos === 'left' && gMeme.lines[gMeme.selectedLineIdx].pos.x > 20) gMeme.lines[gMeme.selectedLineIdx].pos.x -= 10
+    else if (pos === 'right' && gMeme.lines[gMeme.selectedLineIdx].pos.x < 350) gMeme.lines[gMeme.selectedLineIdx].pos.x += 10
 }
+
 
 function aling(pos) {
     console.log('aling :>> ', pos);
@@ -88,24 +82,20 @@ function aling(pos) {
     if (pos === 'center') gMeme.lines[gMeme.selectedLineIdx].pos.x = 200
     if (pos === 'right') gMeme.lines[gMeme.selectedLineIdx].pos.x = 300
 
-
     renderCanvas()
-
 }
 
 function addLine() {
+    if (gLineNum === 3) return
     if (gLineNum === 1) {
         newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 250 } }
         gLineNum++
-        document.querySelector('#text').value=''
+        document.querySelector('#text').value = ''
     } else if (gLineNum === 2) {
         newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 300 } }
         gLineNum++
-        document.querySelector('#text').value=''
-    } else if (gLineNum === 3) {
-        return
+        document.querySelector('#text').value = ''
     }
-
 
     gMeme.lines.push(newLine)
     switchLine()
@@ -118,6 +108,12 @@ function switchLine() {
 
 
 function removeLine() {
+    if (gMeme.lines.length === 1){
+        gMeme.lines[0].txt=''
+        document.querySelector('#text').value=''
+        renderCanvas()
+        return
+    } 
     document.querySelector('#text').value=''
     gMeme.lines.splice(gMeme.selectedLineIdx, gMeme.selectedLineIdx + 1);
     if (gMeme.selectedLineIdx !== 0) gMeme.selectedLineIdx--
@@ -161,6 +157,6 @@ function showGallery() {
     document.querySelector('.grid-container').classList.remove('hide')
     document.querySelector('.app-container').classList.add('hide')
     document.querySelector('#search').classList.remove('hide')
-    document.querySelector('#search').value=''
+    document.querySelector('#search').value = ''
     renderGallery()
 }

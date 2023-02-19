@@ -1,7 +1,7 @@
 'use strict'
 var gElCanvas;
 var gCtx
-// const fileInput = document.getElementById('file-input');
+
 
 function init() {
     gElCanvas = document.getElementById('canvas');
@@ -10,13 +10,6 @@ function init() {
     renderGallery()
 }
 
-// function renderImg(img) {
-//     var imgStartX = 0;
-//     var imgStartY = 0;
-//     gElCanvas.width = img.width;
-//     gElCanvas.height = img.height;
-//     gCtx.drawImage(img, imgStartX, imgStartY, img.width, img.height);
-// }
 
 function resizeCanvas(img = gMyURL) {
     var elContainer = document.querySelector('.canvas-container');
@@ -34,7 +27,7 @@ function resizeCanvas(img = gMyURL) {
 }
 
 function renderGallery() {
-    let images = getImgsForDisplay()// getAllImages()
+    let images = getImgsForDisplay()
     console.log('images :>> ', images);
     let strHtml = images.map(function (img) {
         return `
@@ -119,11 +112,8 @@ function onSwichLine() {
 
 
 function onRemoveLine() {
-    if (gMeme.lines.length === 1) return;
     removeLine()
     renderCanvas()
-
-
 }
 
 

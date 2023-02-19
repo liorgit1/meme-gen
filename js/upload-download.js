@@ -27,22 +27,6 @@ function resizeCanvasToFitImage(img) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // CallBack func will run on success load of the img
 function loadImageFromInput(ev, onImageReady) {
     const reader = new FileReader()

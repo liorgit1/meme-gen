@@ -51,34 +51,22 @@
                 </div>
 
 
-                <!-- <div class="btns-container">
-
-                </div> -->
-
-
-                <!-- <div class="edit-btns-container flex center wrap"> -->
                 <div class="editor center wrap">
                     <div class="btn" onclick="onChangeFontSize('+')" title="Bigger"><i class="fa-solid fa-plus"></i></div>
                     <div class="btn" onclick="onChangeFontSize('-')" title="Smaller"><i class="fa-solid fa-minus"></i></div>
                     <div class="btn" onclick="onAddNewLine()" title="Add new line"><i class="fa-regular fa-square-plus"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('up')" title="Move up"><i class="fa-solid fa-up-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('down')"title="Move down"><i class="fa-solid fa-down-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('left')"title="Move left"><i class="fa-solid fa-left-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('right')"title="Move right"><i class="fa-solid fa-right-long"></i></div>
-
-
-
-
-
-
+                    <div class="btn up" onclick="onChangeTextPos('up')" title="Move up"><i class="fa-solid fa-up-long"></i></div>
+                    <div class="btn down" onclick="onChangeTextPos('down')"title="Move down"><i class="fa-solid fa-down-long"></i></div>
+                    <div class="btn left" onclick="onChangeTextPos('left')"title="Move left"><i class="fa-solid fa-left-long"></i></div>
+                    <div class="btn right" onclick="onChangeTextPos('right')"title="Move right"><i class="fa-solid fa-right-long"></i></div>
 
                     <div class="btn" onclick="onSwichLine()"title="Switch line"><i class="fa-solid fa-shuffle"></i></div>
                     <div class="btn" onclick="onRemoveLine()"title="Remove line"><i class="fa-solid fa-eraser"></i></div>
                     <div class="btn" onclick="onAling('left')"title="Aling left"><i class="fa-solid fa-align-left"></i></div>
                     <div class="btn" onclick="onAling('center')"title="Aling center"><i class="fa-solid fa-align-center"></i></div>
                     <div class="btn" onclick="onAling('right')"title="Aling right"><i class="fa-solid fa-align-right"></i></div>
-                    <input type="color" value="#000000" class="color" onchange="onChangeColor(this.value)"title="Outline color" />
-                    <input type="color" value="#ff0000" class="fillColor" onchange="onChangeFilColor(this.value)"title="Fill color" />
+                    <input type="color" value="#000000" class="color" oninput="onChangeColor(this.value)"title="Outline color" />
+                    <input type="color" value="#ff0000" class="fillColor" oninput="onChangeFilColor(this.value)"title="Fill color" />
 
                     <div class="inputfile-box btn"title="Upload from your computer">
 
@@ -107,34 +95,6 @@
                                 class="fa-solid fa-download"></i></a>
                     </button>
                 </div>
-
-
-
-                <div class="social-btns-container flex center ">
-
-
-
-
-
-
-                    <!-- <input list="font-datalist" name="font-datalist" id="search" type="txt" class="search-words"
-                        oninput="onChangeFont(this.value)" placeholder="font"> -->
-
-
-
-
-                    <!-- <button>a</button>
-                    <button>a</button>
-                    <button>a</button>
-                    <button>a</button> -->
-
-                </div>
-
-
-
-
-
-
 
             </div>
         </div>
