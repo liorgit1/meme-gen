@@ -22,6 +22,25 @@
 }
 
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-nav {
+    font-size: 1.5rem;
+    margin-inline-end: 3rem
+}
+
+.logo {
+
+    margin-inline-start: 3rem;
+    font-size: 2rem;
+
+
+
+}
+
 .main-header {
     height: 6vh;
     width: 90vw;
@@ -48,9 +67,10 @@
 
 }
 
-.btns-container{
+.btns-container {
     display: flex;
 }
+
 .app-container {
     padding-top: 20px;
 
@@ -123,9 +143,9 @@
 
 .text-box {
     padding: 0.2rem 0.8rem;
-    box-shadow: 1px 5px 0 #bbc4d1, inset 0 5px 0 #ffffff;
+    box-shadow: 1px 5px 0 #6a491a, inset 0 5px 0 #c38732;
     border-radius: 28px;
-    background-color: #ebeef3;
+    background-color: #c38732;
     justify-content: center;
     margin-bottom: 1rem;
 }
@@ -135,7 +155,7 @@
 
     width: 90%;
     padding: 1rem 1rem 0;
-    height: auto;
+    height: inherit;
     border-radius: 15px;
     background-color: #db823ebd;
     margin-block-start: 1rem;
@@ -149,29 +169,133 @@
     pointer-events: none;
     user-select: none;
 }
-button{
+
+button {
     margin: 5px;
+    background-color: #c38732;
 }
-body{
+
+body {
     background-color: black;
 }
 
+input[type="color"i] {
 
-.btn{
-height: 2rem;
-width:  2rem;
-justify-content: center;
-align-content: center;
-text-align: center;
-justify-items: center;
-border: #1e1e1e 1px solid;
-padding-top: 6px;
+    background-color: #c38732;
 
-background-color: whitesmoke;
+
 }
 
-.file-input.btn{
-width: 80px;
+.btn {
+    /* height: 2rem;
+    width: 2rem; */
+    cursor: pointer;
+    border-radius: 50px;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    justify-items: center;
+    border: #1e1e1e 1px solid;
+    padding-top: 6px;
+    font-size: 1.3rem;
+    background-color: #c38732;
+}
+
+.file-input.btn {
+    width: 80px;
+
+}
+
+.file-input {
+    height: fit-content;
+
+
+}
+
+.file-input {
+    display: none;
+}
+
+.inputfile-box {
+    position: relative;
+}
+.downloadBtn{}
+.font {
+
+    height: fit-content;
+
+
+
+
+
+}
+
+
+
+input[type="text"i] {
+    background-color: #c38732;
+}
+
+.editor {
+    display: grid;
+    grid-template-columns: repeat(3, 4em);
+    grid-template-rows: repeat(2, 2em) repeat(4, 3em);
+    gap: .5rem;
+    /* grid-template-areas:
+
+        "line line line"
+        "new-line new-line new-line"
+        "add replace clear "
+        "inc dec color"
+        "sta stb stc"
+        "download save share"; */
+    justify-content: center;
+    align-items: center;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 737px) {
+
+    .grid-container {
+        margin: auto;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        margin-bottom: 1rem;
+        margin-inline: 60px;
+    }
+
+
+
+
+
+    .grid-container img {
+
+        height: 160px;
+        width: 160px;
+    }
+
 
 
 }

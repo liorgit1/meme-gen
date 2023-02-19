@@ -44,7 +44,10 @@ function getImgUrl() {
 function updateMeme(imgNum) {
     document.querySelector('.app-container').classList.remove('hide')
     document.querySelector('.grid-container').classList.add('hide')
-    var currMeme;
+    document.querySelector('.galleryLnk').classList.remove('hide')
+    document.querySelector('#search').classList.add('hide')
+    document.querySelector('#search').value=''
+    var currMeme
     currMeme = gImgs.filter(function (img) {
         return (img.id === imgNum);
     })
@@ -94,9 +97,11 @@ function addLine() {
     if (gLineNum === 1) {
         newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 250 } }
         gLineNum++
+        document.querySelector('#text').value=''
     } else if (gLineNum === 2) {
         newLine = { txt: 'new', size: 45, align: 'left', color: document.querySelector('.color').value, fillColor: document.querySelector('.fillColor').value, pos: { x: 250, y: 300 } }
         gLineNum++
+        document.querySelector('#text').value=''
     } else if (gLineNum === 3) {
         return
     }
@@ -113,6 +118,7 @@ function switchLine() {
 
 
 function removeLine() {
+    document.querySelector('#text').value=''
     gMeme.lines.splice(gMeme.selectedLineIdx, gMeme.selectedLineIdx + 1);
     if (gMeme.selectedLineIdx !== 0) gMeme.selectedLineIdx--
     gLineNum--
@@ -151,8 +157,10 @@ function changeFont(font) {
 }
 
 function showGallery() {
+    document.querySelector('.galleryLnk').classList.add('hide')
     document.querySelector('.grid-container').classList.remove('hide')
     document.querySelector('.app-container').classList.add('hide')
+    document.querySelector('#search').classList.remove('hide')
     document.querySelector('#search').value=''
     renderGallery()
 }

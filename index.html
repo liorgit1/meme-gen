@@ -13,7 +13,7 @@
 <body onload="init()">
     <header class="main-header">
         <div class="header-content flex space-between align-center">
-            <div href="#" class="logo">Meme</div>
+            <div href="#" class="logo">Meme-generator</div>
 
             <div class="search">
                 <input list="search-datalist" name="search-datalist" id="search" type="txt" class="search-words"
@@ -32,7 +32,7 @@
 
 
 
-                <a onclick="onShowGallery()" href="#">Gallery</a>
+                <a class="galleryLnk hide" onclick="onShowGallery()" href="#">Gallery</a>
             </nav>
         </div>
     </header>
@@ -51,53 +51,77 @@
                 </div>
 
 
-                <div class="btns-container">
+                <!-- <div class="btns-container">
 
-                    <div class="btn" onclick="onChangeFontSize('+')"><i class="fa-solid fa-plus"></i></div>
-                    <div class="btn" onclick="onChangeFontSize('-')"><i class="fa-solid fa-minus"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('up')"><i class="fa-solid fa-up-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('down')"><i class="fa-solid fa-down-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('left')"><i class="fa-solid fa-left-long"></i></div>
-                    <div class="btn" onclick="onChangeTextPos('right')"><i class="fa-solid fa-right-long"></i></div>
-                </div>
+                </div> -->
 
 
-                <div class="edit-btns-container flex center wrap">
-
-                    <div class="btn" onclick="onAddNewLine()"><i class="fa-regular fa-square-plus"></i></div>
-
-
-
-
-                    <div class="btn" onclick="onSwichLine()"><i class="fa-solid fa-shuffle"></i></div>
-                    <div class="btn" onclick="onRemoveLine()"><i class="fa-solid fa-eraser"></i></div>
-                    <div class="btn" onclick="onAling('left')"><i class="fa-solid fa-align-left"></i></div>
-                    <div class="btn" onclick="onAling('center')"><i class="fa-solid fa-align-center"></i></div>
-                    <div class="btn" onclick="onAling('right')"><i class="fa-solid fa-align-right"></i></div>
-
-                </div>
-                <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)"  />
-                <div class="social-btns-container flex center ">
+                <!-- <div class="edit-btns-container flex center wrap"> -->
+                <div class="editor center wrap">
+                    <div class="btn" onclick="onChangeFontSize('+')" title="bigger"><i class="fa-solid fa-plus"></i></div>
+                    <div class="btn" onclick="onChangeFontSize('-')" title="smaller"><i class="fa-solid fa-minus"></i></div>
+                    <div class="btn" onclick="onAddNewLine()" title="add new line"><i class="fa-regular fa-square-plus"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('up')" title="move up"><i class="fa-solid fa-up-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('down')"title="move down"><i class="fa-solid fa-down-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('left')"title="move left"><i class="fa-solid fa-left-long"></i></div>
+                    <div class="btn" onclick="onChangeTextPos('right')"title="move right"><i class="fa-solid fa-right-long"></i></div>
 
 
-                    <button class="btn" onclick="onUploadImg()">
+
+
+
+
+
+                    <div class="btn" onclick="onSwichLine()"title="switch line"><i class="fa-solid fa-shuffle"></i></div>
+                    <div class="btn" onclick="onRemoveLine()"title="remove line"><i class="fa-solid fa-eraser"></i></div>
+                    <div class="btn" onclick="onAling('left')"title="aling left"><i class="fa-solid fa-align-left"></i></div>
+                    <div class="btn" onclick="onAling('center')"title="aling center"><i class="fa-solid fa-align-center"></i></div>
+                    <div class="btn" onclick="onAling('right')"title="aling right"><i class="fa-solid fa-align-right"></i></div>
+                    <input type="color" value="#000000" class="color" onchange="onChangeColor(this.value)"title="outline color" />
+                    <input type="color" value="#ff0000" class="fillColor" onchange="onChangeFilColor(this.value)"title="fill color" />
+
+                    <div class="inputfile-box btn"title="upload from your computer">
+
+                        <input type="file" id="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+                        <label for="file">
+                            <span id="file-name" class="file-box "></span>
+                            <span class="file-button">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                            </span>
+                        </label>
+                    </div>
+
+                    <select class="font" onchange="onChangeFont(this.value)" id="font-datalist">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value=" Comic Sans MS">Comic Sans</option>
+                        <option value="Helvetica">Helvetica</option>
+                    </select>
+
+                    <button class="btn" onclick="onUploadImg()"title="upload to facebook">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
 
-                    <button form="userPrefs">
-                        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg"><i
+                    <button class="downloadBtn btn">
+                        <a href="#" onclick="downloadImg(this)" download="my-img.jpg"title="download"><i
                                 class="fa-solid fa-download"></i></a>
                     </button>
-                    <input type="color" value="#000000" class="color" onchange="onChangeColor(this.value)" />
-                    <input type="color" value="#ff0000" class="fillColor" onchange="onChangeFilColor(this.value)" />
-                    <input list="font-datalist" name="font-datalist" id="search" type="txt" class="search-words"
-                        oninput="onChangeFont(this.value)" placeholder="font">
-                    <datalist id="font-datalist">
-                        <option value="Impact">
-                        <option value="Arial">
-                        <option value=" Comic Sans MS">
-                        <option value="Helvetica">
-                    </datalist>
+                </div>
+
+
+
+                <div class="social-btns-container flex center ">
+
+
+
+
+
+
+                    <!-- <input list="font-datalist" name="font-datalist" id="search" type="txt" class="search-words"
+                        oninput="onChangeFont(this.value)" placeholder="font"> -->
+
+
+
 
                     <!-- <button>a</button>
                     <button>a</button>
